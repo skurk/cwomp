@@ -1,0 +1,48 @@
+
+CWOMP - "CW Old Man Practice"
+
+License: GNU GPLv3
+
+This is a hobby project written by yours truly, LB5SH Stian.
+A fresh CW operator, as well as a certified grumpy old man.
+
+CWOMP is a simple one-player game that runs entirely in the web browser,
+with the goal of practicing head-copying various callsigns in morse code.
+You compete against yourself - see how many points you get during the
+lunch break or toilet visit. It's surprisingly entertaining, and in my
+opinion a great tool for receiving morse code.
+
+As someone who recently started learning CW, hear me out - I'm dead serious:
+PLEASE AVOID ALL TOOLS AND TRAINING APPS VISUALIZING CW WITH DOTS AND DASHES!
+
+I'm not kidding. You will end up taking a long detour in the journey of
+learning morse code. Trust me, I did this mistake and paid the price.
+
+Anyway, some minor technical details on the game:
+
+Everything is written in oldschool Javascript because I'm old and refuse
+to learn new things. All scripts can be found in the 'js' directory.
+
+The base design is in index.html, coupled with the CSS styles from style.css.
+
+The audio samples played are located in the 'audio' directory.
+
+Morse code is generated in realtime using the OscillatorNode supported
+by most modern web browsers. Why, I have no idea, but it's there and
+I'm using it.
+
+The function for keying morse code was originally written by
+Stuart Wakefield and modified to fit this project. His original idea
+can be found in this stackoverflow thread:
+https://stackoverflow.com/questions/54096028/repeat-an-audiocontext-oscillator-every-5-seconds
+
+Callsigns are purely random generated, based on a set of rules defined by
+the selected difficulty. Check the js/generator.js file for more details.
+
+CWOMP has been tested in Brave, Chrome, and Firefox on desktop.
+Only tested in Chrome and Brave on an old Android phone, works fine.
+
+Use in other browsers at your own risk.
+
+vy 73 de LB5SH Stian
+
