@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cwomp</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+	Preload audio samples
+	Found on various royalty-free sources online.
+-->
+
+<audio id="correct" src="audio/correct.wav" preload></audio>
+<audio id="wrong" src="audio/wrong.wav" preload></audio>
+<audio id="replay" src="audio/replay.wav" preload></audio>
+
+<!-- Include Javascript snippets -->
+
+<script src="js/log.js"></script>
+<script src="js/cw.js"></script>
+<script src="js/prefixes.js"></script>
+<script src="js/generator.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/keyer.js"></script>
+
+<!-- Header -->
+
+<div class="head">
+	<h1>CWOMP</h1>
+</div>
+
+<!-- Main window -->
+
+<div class="main">
+	<div class="container">
+
+		<div class="label">
+			Speed: 
+		</div>
+		<select id="speed" onchange="setSpeed();">
+			<option value="15">15 wpm</option>
+			<option value="18">18 wpm</option>
+			<option value="20" selected>20 wpm</option>
+			<option value="23">23 wpm</option>
+			<option value="25">25 wpm</option>
+			<option value="28">28 wpm</option>
+			<option value="32">32 wpm</option>
+		</select>
+
+		<div class="label">
+			Difficulty: 
+		</div>
+		<select id="difficulty" onchange="setDifficulty();">
+			<option value="0">Easy (only 1x1)</option>
+			<option value="1">Beginner (up to 2x2)</option>
+			<option value="2">Medium (up to 2x3)</option>
+			<option value="3">Hard (2x3 + /P, /M etc)</option>
+		</select>
+	</div>
+
+	<div class="row">
+		<input type="button" name="q" value="Start new game" onClick="initializeAudio()">
+	</div>
+
+	<div class="game">
+		<div class="row">
+			<span id="score">&nbsp;</span>
+			<span id="claimed">&nbsp;</span>
+		</div>
+		<div id="game" class="row">
+			<input class="cb" type="button" title="Sends the call again, but will cost you one point." value="Again?" onClick="repeatCallAndDeductScore(0)">
+			<input type="text" id="guess" value="" onkeydown="submit(this)">
+			<input class="cb" type="button" title="Give up (0 points) and start next round" value="Give up" onClick="giveUpSendNextCall()">
+		</div>
+		<hr>
+		<textarea id="log" readonly></textarea>
+	</div>
+</div>
+
+<!-- Footer -->
+
+<div class="footer">
+	CWOMP v0.53 by <a href="https://la2t.no/">LA2T</a>
+</div>
+
+</body>
+</html>

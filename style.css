@@ -1,0 +1,251 @@
+
+/* CSS variables */
+
+:root {
+	--background-color: #f5f5f5;
+	--game-background-color: #5aadff;
+	--game-border-color: #5588cc;
+	--game-border-thickness: 3px;
+	--text-color: #333333;
+}
+
+/* CSS for desktop etc */
+
+html *
+{
+	font-family: 'Roboto', sans-serif !important;
+	color: var(--text-color);
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+div.head {
+	width: 600px;
+	margin: auto;
+	text-align: center;
+}
+
+div.footer {
+	font-size: 10px;
+	margin: auto;
+	width: 600px;
+	text-align: right;
+}
+
+div.main {
+	border-radius: 20px;
+	margin: auto;
+	width: 600px;
+	background-color: var(--game-background-color);
+	border: var(--game-border-thickness) var(--game-border-color) solid;
+	padding: 10px;
+}
+
+div.row {
+	font-size: 18px;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+}
+
+select {
+	padding: 8px;
+	border-radius: 10px;
+	font-size: 18px;
+}
+
+input {
+	border-radius: 10px;
+	border: 1px #888 solid;
+	padding: 10px;
+	font-size: 18px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+input[type=text] {
+	text-transform: uppercase;
+	width: 150;
+}
+
+textarea {
+	resize: none;
+	border-radius: 10px;
+	width: 600px;
+	height: 290px;
+	margin: auto;
+	font-size: 18px;
+}
+
+span {
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #ffff00;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+div.game {
+	visibility: hidden;
+}
+
+div.label {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+div.container {
+	display: flex;
+	width: 100%;
+	float: left;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+}
+
+#claimed {
+	transition: color 500ms linear;
+
+}
+
+#score {
+	transition: color 500ms linear;
+}
+
+.cb {
+	width: 100px;
+}
+
+/* CSS for stupid phones */
+
+@media (max-width: 400px) {
+
+	html *
+	{
+		font-family: 'Roboto', sans-serif !important;
+		color: var(--text-color);
+	}
+
+	h1 {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	body {
+		margin: 0px;
+		background-color: var(--background-color);
+	}
+
+	div.head {
+		width: 100%;
+		margin: auto;
+		padding: 0px;
+		text-align: center;
+	}
+	
+	div.footer {
+		font-size: 10px;
+		margin: auto;
+		width: 90%;
+		text-align: right;
+	}
+	
+	div.main {
+		border-radius: 20px;
+		margin: auto;
+		width: 90%;
+		background-color: var(--game-background-color);
+		border: var(--game-border-thickness) var(--game-border-color) solid;
+		padding: 10px;
+	}
+	
+	div.row {
+		display: block;
+		font-size: 18px;
+		margin: auto;
+		text-align: center;
+	}
+	
+	select {
+		padding: 8px;
+		border-radius: 10px;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+	
+	input {
+		border-radius: 10px;
+		border: 1px #888 solid;
+		padding: 10px;
+		font-size: 18px;
+		margin-left: 5px;
+		margin-right: 5px;
+		width: auto;
+	}
+	
+	input[type=text] {
+		text-transform: uppercase;
+		width: 50px;
+	}
+	
+	textarea {
+		resize: none;
+		border-radius: 10px;
+		width: 100%;
+		height: 100px;
+		margin: auto;
+		padding: 0px;
+		font-size: 15px;
+	}
+	
+	span {
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 24px;
+		font-weight: bold;
+		color: #ffff00;
+		text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	}
+	
+	div.game {
+		visibility: hidden;
+	}
+	
+	div.label {
+		display: none;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	div.container {
+		display: flex;
+		width: 90%;
+		justify-content: center;
+		align-items: center;
+		font-size: 15px;
+		margin: auto;
+		text-align: center;
+		padding: 10px;
+	}
+	
+	#claimed {
+		transition: color 500ms linear;
+		font-size: 15px;
+	}
+	
+	#score {
+		transition: color 500ms linear;
+		font-size: 18px;
+	}
+	
+	.cb {
+		width: auto;
+		font-size: 18px;
+	}
+}
